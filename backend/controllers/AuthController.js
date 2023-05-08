@@ -30,7 +30,7 @@ AuthControllers
             };
 
             req.session.save();
-            res.redirect('/dashboard'); // przekierowanie na /dashboard po zalogowaniu
+            res.redirect('/dashboard')
         } catch (error) {
             res.status(500).json({ message: 'Wystąpił błąd serwera.' });
         }
@@ -38,10 +38,7 @@ AuthControllers
 
 
     .get('/logout', (req, res) => {
-
         req.session.destroy();
-
-        res.redirect('/login');
     })
 
     .post('/sign-up', async (req, res) => {
